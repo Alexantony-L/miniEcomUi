@@ -96,7 +96,7 @@ if (!/^\d{16}$/.test(form.cardNumber)) {
     };
 
     try {
-      const res = await axios.post(`${REACT_APP_SERVER}/api/orders`, payload);
+      const res = await axios.post(`${process.env.REACT_APP_SERVER}/api/orders`, payload);
       navigate(`/thank-you/${res.data.orderId}`);
     } catch (err) {
       alert("Order failed");

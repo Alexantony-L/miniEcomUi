@@ -8,7 +8,7 @@ function ThankYouPage() {
 
   useEffect(() => {
     axios
-      .get(`${REACT_APP_SERVER}/api/orders/${orderId}`)
+      .get(`${process.env.REACT_APP_SERVER}/api/orders/${orderId}`)
       .then((res) => setOrder(res.data))
       .catch(() => alert("Order not found"));
   }, [orderId]);
